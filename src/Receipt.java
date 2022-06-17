@@ -34,8 +34,9 @@ public class Receipt extends JFrame  {
 	public String des, cost,currentDate;
 	public Double newtotal;
 	DecimalFormat formatter =  new DecimalFormat("#0.00");
+	private JLabel platans;
 	
-	public Receipt(String des , String cost , Integer b , String payment , Integer c,String membership,Integer d,String newcost,Double amount) {
+	public Receipt(String des , String cost , Integer b , String payment , Integer c,String membership,Integer d,String newcost,Double amount,String plat1) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 899, 685);
 		contentPane = new JPanel();
@@ -76,13 +77,13 @@ public class Receipt extends JFrame  {
 		totalTicketLabel = new JLabel("Total tickets :");
 		totalTicketLabel.setFont(new Font("Century Gothic", Font.BOLD, 40));
 		totalTicketLabel.setForeground(new Color(255, 255, 255));
-		totalTicketLabel.setBounds(136, 338, 251, 50);
+		totalTicketLabel.setBounds(137, 313, 251, 50);
 		contentPane.add(totalTicketLabel);
 		
 		totalPriceLabel = new JLabel("Total Price :");
 		totalPriceLabel.setFont(new Font("Century Gothic", Font.BOLD, 40));
 		totalPriceLabel.setForeground(new Color(255, 255, 255));
-		totalPriceLabel.setBounds(166, 386, 251, 50);
+		totalPriceLabel.setBounds(167, 362, 251, 50);
 		contentPane.add(totalPriceLabel);
 		
 		copyrightLabel = new JLabel("COPYRIGHT TRAIN TICKETING SYSTEM\r\n\r\n");
@@ -130,7 +131,7 @@ public class Receipt extends JFrame  {
 		membershipLabel = new JLabel("MEMBERSHIP STATUS :");
 		membershipLabel.setForeground(new Color(255, 255, 255));
 		membershipLabel.setFont(new Font("Century Gothic", Font.BOLD, 35));
-		membershipLabel.setBounds(31, 291, 372, 48);
+		membershipLabel.setBounds(31, 268, 372, 48);
 		contentPane.add(membershipLabel);
 		
 		destinationLabel = new JLabel("DESTINATION :\r\n");
@@ -148,79 +149,79 @@ public class Receipt extends JFrame  {
 		payUsingLabel = new JLabel("PAYMENT\r\n");
 		payUsingLabel.setForeground(Color.WHITE);
 		payUsingLabel.setFont(new Font("Century Gothic", Font.BOLD, 35));
-		payUsingLabel.setBounds(213, 225, 314, 32);
+		payUsingLabel.setBounds(53, 225, 169, 32);
 		contentPane.add(payUsingLabel);
 		
 		methodUsingLabel = new JLabel("METHOD :\r\n");
 		methodUsingLabel.setForeground(Color.WHITE);
 		methodUsingLabel.setFont(new Font("Century Gothic", Font.BOLD, 35));
-		methodUsingLabel.setBounds(223, 254, 314, 32);
+		methodUsingLabel.setBounds(225, 225, 163, 32);
 		contentPane.add(methodUsingLabel);
 		
 		destinationlbl = new JLabel(""+des);
 		destinationlbl.setForeground(new Color(255, 255, 255));
-		destinationlbl.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 28)); 
-		destinationlbl.setBounds(413, 133, 235, 42);
+		destinationlbl.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 30)); 
+		destinationlbl.setBounds(398, 132, 412, 42);
 		contentPane.add(destinationlbl);
 		
-		ctgorylbl = new JLabel(""+b +" ADULT" + "   " + c +" KIDS");
+		ctgorylbl = new JLabel(""+b +" ADULT" + " " + c +" KIDS");
 		ctgorylbl.setForeground(Color.WHITE);
 		ctgorylbl.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 30));
-		ctgorylbl.setBounds(413, 173, 332, 42);
+		ctgorylbl.setBounds(398, 173, 332, 42);
 		contentPane.add(ctgorylbl);
 		
 		pymentlbl = new JLabel(""+payment);
 		pymentlbl.setForeground(Color.WHITE);
 		pymentlbl.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 30));
-		pymentlbl.setBounds(402, 240, 404, 54);
+		pymentlbl.setBounds(398, 215, 404, 54);
 		contentPane.add(pymentlbl);
 		
 		mmbrlbl = new JLabel("" +membership);
 		mmbrlbl.setForeground(Color.WHITE);
-		mmbrlbl.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 33));
-		mmbrlbl.setBounds(413, 294, 235, 42);
+		mmbrlbl.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 30));
+		mmbrlbl.setBounds(398, 272, 235, 42);
 		contentPane.add(mmbrlbl);
 		
 		totalticketslbl = new JLabel(""+d);
 		totalticketslbl.setForeground(Color.WHITE);
-		totalticketslbl.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 33));
-		totalticketslbl.setBounds(413, 344, 235, 42);
+		totalticketslbl.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 35));
+		totalticketslbl.setBounds(398, 318, 235, 42);
 		contentPane.add(totalticketslbl);
 		
 		totalpricelbl = new JLabel("RM"+cost);
 		totalpricelbl.setForeground(Color.WHITE);
-		totalpricelbl.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 20));
-		totalpricelbl.setBounds(402, 397, 235, 42);
+		totalpricelbl.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 30));
+		totalpricelbl.setBounds(398, 369, 235, 42);
 		contentPane.add(totalpricelbl);
 		
 		line1Label_1 = new JLabel("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\r\n");
 		line1Label_1.setForeground(Color.WHITE);
 		line1Label_1.setFont(new Font("Tahoma", Font.BOLD, 11));
-		line1Label_1.setBounds(0, 540, 895, 13);
+		line1Label_1.setBounds(0, 554, 895, 13);
 		contentPane.add(line1Label_1);
 		
 		lblAmountPaid = new JLabel("Amount Paid :");
 		lblAmountPaid.setForeground(Color.WHITE);
 		lblAmountPaid.setFont(new Font("Century Gothic", Font.BOLD, 40));
-		lblAmountPaid.setBounds(117, 435, 286, 50);
+		lblAmountPaid.setBounds(115, 412, 286, 50);
 		contentPane.add(lblAmountPaid);
 		
 		amountpaidlbl = new JLabel("RM"+amount);
 		amountpaidlbl.setForeground(Color.WHITE);
-		amountpaidlbl.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 20));
-		amountpaidlbl.setBounds(402, 443, 235, 42);
+		amountpaidlbl.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 30));
+		amountpaidlbl.setBounds(398, 419, 235, 42);
 		contentPane.add(amountpaidlbl);
 		
 		lblBalance = new JLabel("Balance :");
 		lblBalance.setForeground(Color.WHITE);
 		lblBalance.setFont(new Font("Century Gothic", Font.BOLD, 40));
-		lblBalance.setBounds(202, 485, 201, 50);
+		lblBalance.setBounds(202, 460, 201, 50);
 		contentPane.add(lblBalance);
 		
 		ballbl = new JLabel("RM"+newcost);
 		ballbl.setForeground(Color.WHITE);
-		ballbl.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 20));
-		ballbl.setBounds(402, 496, 235, 42);
+		ballbl.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 30));
+		ballbl.setBounds(398, 467, 235, 42);
 		contentPane.add(ballbl);
 		
 		JButton endbtn = new JButton("END");
@@ -237,6 +238,18 @@ public class Receipt extends JFrame  {
 		});
 		endbtn.setBounds(662, 568, 192, 58);
 		contentPane.add(endbtn);
+		
+		JLabel platlbl = new JLabel("Plat :");
+		platlbl.setForeground(Color.WHITE);
+		platlbl.setFont(new Font("Century Gothic", Font.BOLD, 40));
+		platlbl.setBounds(293, 505, 107, 50);
+		contentPane.add(platlbl);
+		
+		platans = new JLabel(""+plat1);
+		platans.setForeground(Color.WHITE);
+		platans.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 35));
+		platans.setBounds(398, 507, 235, 48);
+		contentPane.add(platans);
 
 	
 	

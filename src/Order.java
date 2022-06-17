@@ -3,6 +3,8 @@ import java.awt.EventQueue;
 import java.awt.*;
 
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.MatteBorder;
+
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Image;
@@ -30,7 +32,8 @@ public class Order extends JFrame implements ActionListener {
     private final ButtonGroup buttonGroup = new ButtonGroup();
     protected JTextField Pricetxt;
     private JButton NextButton;
-    public String cost , membership , adultstring , kidstring , dname , destination , des;
+    public String cost , membership , adultstring , kidstring , dname , destination , des ,plat1;
+    public int plat;
     public double price,total;
     private Dimension dim;
     public SpinnerModel model,model1;
@@ -61,8 +64,8 @@ public class Order extends JFrame implements ActionListener {
     	setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 1040, 575);
         contentPane = new JPanel();
-        contentPane.setBackground(Color.BLACK);
-        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        contentPane.setBackground(new Color(0, 0, 128));
+        contentPane.setBorder(null);
         setContentPane(contentPane);
         contentPane.setLayout(null);
         Image payment = new ImageIcon(this.getClass().getResource("/pay.png")).getImage();
@@ -70,99 +73,103 @@ public class Order extends JFrame implements ActionListener {
         dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
 
-        destinationlabel = new JLabel("Destination");
-        destinationlabel.setForeground(Color.WHITE);
+        destinationlabel = new JLabel("Destination.");
+        destinationlabel.setBackground(new Color(255, 255, 255));
+        destinationlabel.setForeground(new Color(255, 255, 255));
         destinationlabel.setFont(new Font("Century Gothic", Font.BOLD, 50));
-        destinationlabel.setBounds(55, 38, 448, 49);
+        destinationlabel.setBounds(78, 90, 448, 49);
         contentPane.add(destinationlabel);
 
 
         
         
         String[]places = {"WILAYAH PERSEKETUAN","JOHOR","PULAU PINANG","KELANTAN","MELAKA","PERAK","TERENGGANU","NEGERI SEMBILAN","KEDAH","PAHANG","SELANGOR","PERLIS"};
+        int[] prices = {1,2,3,4,5,6,7,7,8,9,10};
         comboBox = new JComboBox(places);
+        comboBox.setBackground(Color.WHITE);
+        comboBox.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 12));
         comboBox.insertItemAt("---ENTER YOUR DESTINATION---", 0);
         comboBox.setSelectedIndex(0);
-        comboBox.setBounds(55, 99, 294, 23);
+        comboBox.setBounds(82, 150, 294, 23);
         contentPane.add(comboBox);
 
 
-        lblCategory = new JLabel("Category");
-        lblCategory.setForeground(Color.WHITE);
+        lblCategory = new JLabel("Category.");
+        lblCategory.setForeground(new Color(255, 255, 255));
         lblCategory.setFont(new Font("Century Gothic", Font.BOLD, 50));
-        lblCategory.setBounds(55, 168, 255, 62);
+        lblCategory.setBounds(88, 193, 255, 62);
         contentPane.add(lblCategory);
         
         SpinnerModel model = new SpinnerNumberModel(0, 0, 100, 1);
         adultspinner = new JSpinner(model);
         adultspinner.setForeground(Color.CYAN);
-        adultspinner.setBounds(200, 241, 84, 32);
+        adultspinner.setBounds(241, 266, 84, 32);
         contentPane.add(adultspinner);
         
         SpinnerModel model1 = new SpinnerNumberModel(0, 0, 100, 1);
         kidspinner = new JSpinner(model1);
         kidspinner.setBackground(Color.CYAN);
-        kidspinner.setBounds(200, 284, 84, 32);
+        kidspinner.setBounds(241, 309, 84, 32);
         contentPane.add(kidspinner);
       
         adultLabel = new JLabel("ADULT");
-        adultLabel.setForeground(Color.CYAN);
+        adultLabel.setForeground(new Color(255, 255, 255));
         adultLabel.setFont(new Font("Century Gothic", Font.PLAIN, 26));
-        adultLabel.setBounds(55, 241, 90, 32);
+        adultLabel.setBounds(127, 266, 90, 32);
         contentPane.add(adultLabel);
 
         childLabel = new JLabel("CHILDREN");
-        childLabel.setForeground(Color.CYAN);
+        childLabel.setForeground(new Color(255, 255, 255));
         childLabel.setFont(new Font("Century Gothic", Font.PLAIN, 26));
-        childLabel.setBounds(55, 282, 125, 32);
+        childLabel.setBounds(108, 309, 125, 32);
         contentPane.add(childLabel);
 
 
-        lblMembership = new JLabel("MEMBERSHIP");
-        lblMembership.setForeground(Color.WHITE);
+        lblMembership = new JLabel("MEMBERSHIP.");
+        lblMembership.setForeground(new Color(255, 255, 255));
         lblMembership.setFont(new Font("Century Gothic", Font.BOLD, 50));
-        lblMembership.setBounds(55, 325, 334, 62);
+        lblMembership.setBounds(71, 384, 334, 62);
         contentPane.add(lblMembership);
 
-        Pricelabel = new JLabel("PRICE");
-        Pricelabel.setForeground(Color.WHITE);
+        Pricelabel = new JLabel("PRICE: ");
+        Pricelabel.setForeground(new Color(255, 255, 255));
         Pricelabel.setFont(new Font("Century Gothic", Font.BOLD, 50));
-        Pricelabel.setBounds(707, 38, 153, 49);
+        Pricelabel.setBounds(536, 122, 184, 49);
         contentPane.add(Pricelabel);
 
         TotalButton = new JButton("TOTAL");
         TotalButton.setBackground(Color.LIGHT_GRAY);
         TotalButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-        TotalButton.setBounds(176, 442, 173, 49);
+        TotalButton.setBounds(834, 200, 130, 32);
         contentPane.add(TotalButton);
                 
         Pricetxt = new JTextField();
-        Pricetxt.setBounds(631, 98, 294, 89);
+        Pricetxt.setBounds(718, 114, 220, 64);
         contentPane.add(Pricetxt);
         Pricetxt.setBackground(Color.WHITE);
         Pricetxt.setFont(new Font("Dubai Light", Font.PLAIN, 50));
         Pricetxt.setColumns(10);
                         
         YesBtn = new JRadioButton("Yes");
-        YesBtn.setForeground(Color.CYAN);
-        YesBtn.setBackground(Color.BLACK);
+        YesBtn.setForeground(new Color(0, 0, 0));
+        YesBtn.setBackground(new Color(255, 255, 255));
         YesBtn.setFont(new Font("Century Gothic", Font.PLAIN, 20));
         buttonGroup.add(YesBtn);
-        YesBtn.setBounds(55, 399, 109, 23);
+        YesBtn.setBounds(108, 453, 109, 23);
         contentPane.add(YesBtn);
                         
         NoBtn = new JRadioButton("No");
-        NoBtn.setForeground(Color.CYAN);
-        NoBtn.setBackground(Color.BLACK);
+        NoBtn.setForeground(new Color(0, 0, 0));
+        NoBtn.setBackground(new Color(255, 255, 255));
         NoBtn.setFont(new Font("Century Gothic", Font.PLAIN, 20));
         buttonGroup.add(NoBtn);
-        NoBtn.setBounds(189, 399, 109, 23);
+        NoBtn.setBounds(246, 453, 109, 23);
         contentPane.add(NoBtn);
                         
         btnReset = new JButton("RESET");
         btnReset.setBackground(Color.LIGHT_GRAY);
         btnReset.setFont(new Font("Tahoma", Font.PLAIN, 18));
-        btnReset.setBounds(48, 442, 125, 49);
+        btnReset.setBounds(699, 200, 125, 32);
         contentPane.add(btnReset);
         
         NextButton = new JButton("NEXT");
@@ -170,8 +177,21 @@ public class Order extends JFrame implements ActionListener {
         NextButton.setForeground(Color.BLACK);
         NextButton.setBackground(Color.WHITE);
         NextButton.setFont(new Font("Century Gothic", Font.BOLD, 28));
-        NextButton.setBounds(631, 421, 294, 70);
+        NextButton.setBounds(716, 414, 248, 62);
         contentPane.add(NextButton);
+        
+        JPanel panel_1_1 = new JPanel();
+        panel_1_1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
+        panel_1_1.setBackground(new Color(204, 204, 255));
+        panel_1_1.setBounds(0, 0, 1047, 62);
+        contentPane.add(panel_1_1);
+        panel_1_1.setLayout(null);
+        
+        JLabel lblNewLabel = new JLabel("Book Your Ticket Now!");
+        lblNewLabel.setForeground(new Color(0, 0, 0));
+        lblNewLabel.setFont(new Font("Rockwell", Font.BOLD | Font.ITALIC, 30));
+        lblNewLabel.setBounds(33, 11, 411, 40);
+        panel_1_1.add(lblNewLabel);
       
         
         
@@ -191,6 +211,7 @@ public class Order extends JFrame implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			String placez;
 			int adult1;  
 			int kid1;
 			double newtotal;
@@ -200,6 +221,7 @@ public class Order extends JFrame implements ActionListener {
 			Integer b = (Integer)adultspinner.getValue();
 			Integer c = (Integer)kidspinner.getValue();
 			Integer d = (Integer)adultspinner.getValue() +  (Integer)kidspinner.getValue();
+			plat1 = String.valueOf(plat);
 		
 			if(e.getSource() == TotalButton) {
 				if(buttonGroup.isSelected(null))
@@ -214,6 +236,8 @@ public class Order extends JFrame implements ActionListener {
 							
 								if (((String)comboBox.getSelectedItem()).equals("WILAYAH PERSEKETUAN")){
 									price = 15;
+									plat = 1;
+									
 									
 								}
 								else if(((String)comboBox.getSelectedItem()).equals("---ENTER YOUR DESTINATION---")){
@@ -224,55 +248,67 @@ public class Order extends JFrame implements ActionListener {
 								}
 								else if(((String)comboBox.getSelectedItem()).equals("JOHOR")){
 									price = 50;
+									plat = 1;
+									
 									
 								}
 								else if(((String)comboBox.getSelectedItem()).equals("PULAU PINANG")){
 									price = 25;
+									plat = 6;
 									
 									
 								}
 								else if(((String)comboBox.getSelectedItem()).equals("KELANTAN")){
 									price = 60;
+									plat = 1;
 									
 									
 								}
 								else if(((String)comboBox.getSelectedItem()).equals("MELAKA")){
 									price = 40;
+									plat = 3;
 									
 									
 								}
 								else if(((String)comboBox.getSelectedItem()).equals("PERAK")){
 									price = 40;
+									plat = 1;
 									
 									
 								}
 								else if(((String)comboBox.getSelectedItem()).equals("TERENGGANU")){
 									price = 65;
+									plat = 6;
 									
 									
 								}
 								else if(((String)comboBox.getSelectedItem()).equals("NEGERI SEMBILAN")){
 									price = 30;
+									plat = 2;
 									
 									
 								}
 								else if(((String)comboBox.getSelectedItem()).equals("KEDAH")){
 									price = 70;
-								
+									plat = 1;
+									
 									
 								}
 								else if(((String)comboBox.getSelectedItem()).equals("PAHANG")){
 									price = 35;
+									plat = 8;
 									
 									
 								}
 								else if(((String)comboBox.getSelectedItem()).equals("SELANGOR")){
 									price = 20;
+									plat = 9;
 									
 									
 								}
 								else if(((String)comboBox.getSelectedItem()).equals("PERLIS")){
 									price = 90;
+									plat = 1;
 									
 									
 								}
@@ -292,52 +328,69 @@ public class Order extends JFrame implements ActionListener {
 					
 					membership = "NO";	
 						
-						if (((String)comboBox.getSelectedItem()).equals("WILAYAH PERSEKETUAN")){
+						if (((String)comboBox.getSelectedItem()).equals("WILAYAH PERSEKETUAN"))
+						{
 							price = 15;
-							
+							plat = 1;
+						}
+						else if(((String)comboBox.getSelectedItem()).equals("---ENTER YOUR DESTINATION---")){
+							JOptionPane.showMessageDialog(null, "Please Enter The Your Destination", "ERROR!", JOptionPane.ERROR_MESSAGE);
+							return;
 						}
 						else if(((String)comboBox.getSelectedItem()).equals("JOHOR")){
 							price = 50;
+							plat = 1;
 							
 						}
 						else if(((String)comboBox.getSelectedItem()).equals("PULAU PINANG")){
 							price = 25;
+							plat = 6;
 							
 						}
 						else if(((String)comboBox.getSelectedItem()).equals("KELANTAN")){
 							price = 60;
+							plat = 1;
 							
 						}
 						else if(((String)comboBox.getSelectedItem()).equals("MELAKA")){
 							price = 40;
-						
+							plat = 3;
+							
 						}
 						else if(((String)comboBox.getSelectedItem()).equals("PERAK")){
 							price = 40;
+							plat = 1;
+							
 							
 						}
 						else if(((String)comboBox.getSelectedItem()).equals("TERENGGANU")){
 							price = 65;
+							plat = 6;
 							
 						}
 						else if(((String)comboBox.getSelectedItem()).equals("NEGERI SEMBILAN")){
 							price = 30;
+							plat = 2;
 							
 						}
 						else if(((String)comboBox.getSelectedItem()).equals("KEDAH")){
 							price = 70;
+							plat = 1;
 						
 						}
 						else if(((String)comboBox.getSelectedItem()).equals("PAHANG")){
 							price = 35;
+							plat = 8;
 							
 						}
 						else if(((String)comboBox.getSelectedItem()).equals("SELANGOR")){
 							price = 20;
-						
+							plat = 9;
+							
 						}
 						else if(((String)comboBox.getSelectedItem()).equals("PERLIS")){
 							price = 90;
+							plat = 1;
 							
 						}
 							
@@ -365,7 +418,7 @@ public class Order extends JFrame implements ActionListener {
 				else if(e.getSource()==NextButton)
 			{
 					
-				Pay jf1 = new Pay(des,cost,b,c,membership,d,total);
+				Pay jf1 = new Pay(des,cost,b,c,membership,d,total,plat1);
 				jf1.show();
 				
 				
