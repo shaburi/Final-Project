@@ -22,6 +22,7 @@ import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextArea;
 
 public class Pay extends JFrame implements ActionListener{
 
@@ -29,12 +30,13 @@ public class Pay extends JFrame implements ActionListener{
 	private JTextPane paymentTxt, txtpnChoosePaymentType ,txtpnTotal , txtpnEnterTheAmount;
 	private Dimension dim;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
-	private JTextField txtRm , textField , textField_2 ;
+	private JTextField textField , textField_2 ;
 	public JRadioButton ccbut, debitbut, cashbut;
 	public String des,cost,payment,newcost;
 	public JButton PayButton;
 	DecimalFormat formatter =  new DecimalFormat("#0.00");
 	public double newnew , newtotal;
+	private JTextArea textArea;
 	
 
 	/**
@@ -56,7 +58,7 @@ public class Pay extends JFrame implements ActionListener{
 	/**
 	 * Create the frame.
 	 */
-	public Pay(String des , String cost,Integer b,Integer c,String membership,Integer d,Double total,String plat1) {
+	public Pay(String des , String cost,Integer b,Integer c,String membership,Integer d,Double total,String plat1,String time) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 973, 600);
 		contentPane = new JPanel();
@@ -83,6 +85,7 @@ public class Pay extends JFrame implements ActionListener{
 		contentPane.add(paymentpanel);
 		paymentpanel.setLayout(null);
 		
+		//JTEXTPANE TO CHOOSE PAYMENT METHOD
 		txtpnChoosePaymentType = new JTextPane();
 		txtpnChoosePaymentType.setForeground(Color.WHITE);
 		txtpnChoosePaymentType.setBackground(Color.BLACK);
@@ -91,6 +94,8 @@ public class Pay extends JFrame implements ActionListener{
 		txtpnChoosePaymentType.setBounds(10, 11, 244, 32);
 		paymentpanel.add(txtpnChoosePaymentType);
 		
+		
+		//JRADIOBUTTON TO PAY WITH DEBITCARD
 		debitbut = new JRadioButton("Debit Card");
 		buttonGroup.add(debitbut);
 		debitbut.setFont(new Font("Century Gothic", Font.BOLD, 18));
@@ -98,6 +103,7 @@ public class Pay extends JFrame implements ActionListener{
 		debitbut.setBounds(10, 146, 244, 48);
 		paymentpanel.add(debitbut);
 		
+		//JRADIOBUTTON TO PAY WITH CREDIT CARD
 		ccbut = new JRadioButton("Credit Card");
 		buttonGroup.add(ccbut);
 		ccbut.setFont(new Font("Century Gothic", Font.BOLD, 18));
@@ -105,6 +111,7 @@ public class Pay extends JFrame implements ActionListener{
 		ccbut.setBounds(10, 95, 244, 48);
 		paymentpanel.add(ccbut);
 		
+		//JRADIOBUTTON TO PAY WITH CASH
 		cashbut = new JRadioButton("Cash");
 		buttonGroup.add(cashbut);
 		cashbut.setFont(new Font("Century Gothic", Font.BOLD, 17));
@@ -112,12 +119,14 @@ public class Pay extends JFrame implements ActionListener{
 		cashbut.setBounds(10, 44, 244, 48);
 		paymentpanel.add(cashbut);
 		
+		
 		totalpanel = new JPanel();
 		totalpanel.setBackground(Color.BLACK);
 		totalpanel.setBounds(375, 119, 511, 201);
 		contentPane.add(totalpanel);
 		totalpanel.setLayout(null);
 		
+		//JTEXTPANE FOR TOTAL
 		txtpnTotal = new JTextPane();
 		txtpnTotal.setForeground(Color.WHITE);
 		txtpnTotal.setText("TOTAL");
@@ -126,11 +135,13 @@ public class Pay extends JFrame implements ActionListener{
 		txtpnTotal.setBounds(10, 0, 178, 61);
 		totalpanel.add(txtpnTotal);
 		
-		txtRm = new JTextField("RM"+cost);
-		txtRm.setFont(new Font("Century Gothic", Font.PLAIN, 99));
-		txtRm.setBounds(20, 72, 481, 104);
-		totalpanel.add(txtRm);
-		txtRm.setColumns(10);
+		//JTEXTAREA TO GET TOTAL COST
+		textArea = new JTextArea("RM" +formatter.format(total));
+		textArea.setEditable(false);
+		textArea.setFont(new Font("Century Gothic", Font.PLAIN, 99));
+		textArea.setBounds(10, 72, 491, 118);
+		totalpanel.add(textArea);
+		
 		
 		paynow = new JPanel();
 		paynow.setBackground(new Color(0, 0, 0));
@@ -138,6 +149,7 @@ public class Pay extends JFrame implements ActionListener{
 		contentPane.add(paynow);
 		paynow.setLayout(null);
 		
+		//JTEXTFIELD TO GET AMOUNT WANT TO PAY 
 		txtpnEnterTheAmount = new JTextPane();
 		txtpnEnterTheAmount.setForeground(Color.WHITE);
 		txtpnEnterTheAmount.setBackground(new Color(0, 0, 0));
@@ -145,6 +157,7 @@ public class Pay extends JFrame implements ActionListener{
 		txtpnEnterTheAmount.setFont(new Font("Century Gothic", Font.BOLD, 21));
 		txtpnEnterTheAmount.setBounds(10, 11, 445, 33);
 		paynow.add(txtpnEnterTheAmount);
+		
 		
 		textField = new JTextField();
 		textField.setBounds(10, 50, 802, 33);
@@ -190,16 +203,17 @@ public class Pay extends JFrame implements ActionListener{
 					return;
             	}
             	
-          
+            	//GET TOTAL COST AFTER MINUS WITH AMOUNT
             		newww = amount - total;
             		newcost = String.valueOf(formatter.format(newww));
             	
-            	
-            	Receipt asfdf = new Receipt(des,cost,b,payment,c,membership,d,newcost,amount,plat1);
+            	//GET RECEIPT
+            	Receipt asfdf = new Receipt(des,cost,b,payment,c,membership,d,newcost,amount,plat1,time);
         		asfdf.show();
 
             }
         });
+		//ICON FOR PAYBUTTON
 		PayButton.setIcon(new ImageIcon(Pay.class.getResource("/payment.png")));
 		PayButton.setFont(new Font("Century Gothic", Font.BOLD, 20));
 		PayButton.setBounds(355, 446, 205, 66);

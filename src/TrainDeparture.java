@@ -64,30 +64,35 @@ public class TrainDeparture extends JFrame implements ActionListener  {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
+		//JLABEL FOR DESTINATION AVAILABLE
 		JLabel lblDestination = new JLabel("DESTINATION");
 		lblDestination.setForeground(Color.WHITE);
 		lblDestination.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 15));
 		lblDestination.setBounds(172, 61, 123, 19);
 		panel.add(lblDestination);
 		
+		//JLABEL FOR PLAT
 		JLabel lblPlat = new JLabel("PLAT");
 		lblPlat.setForeground(Color.WHITE);
 		lblPlat.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 15));
 		lblPlat.setBounds(358, 61, 49, 19);
 		panel.add(lblPlat);
 		
+		//JLABEL FOR TIME EXPECTED
 		JLabel lblExpetation = new JLabel("EXPECTED");
 		lblExpetation.setForeground(Color.WHITE);
 		lblExpetation.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 15));
 		lblExpetation.setBounds(475, 61, 95, 19);
 		panel.add(lblExpetation);
 		
+		//JLABEL FOR TRAIN DEPARTURE
 		JLabel lblDeparture = new JLabel("DEPARTURE");
 		lblDeparture.setBounds(10, 18, 143, 19);
 		panel.add(lblDeparture);
 		lblDeparture.setForeground(Color.WHITE);
 		lblDeparture.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
 		
+		//JLABEL FOR TRAIN TIME
 		JLabel lblNewLabel = new JLabel("TIME");
 		lblNewLabel.setBounds(30, 61, 49, 19);
 		panel.add(lblNewLabel);
@@ -96,15 +101,17 @@ public class TrainDeparture extends JFrame implements ActionListener  {
 		timelabel.setBounds(154, 18, 337, 19);
 		panel.add(timelabel);
 		
-		
+		//TO GET TIME
 		timelabel.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
 		timelabel.setForeground(new Color(255, 255, 255));
 		
+		//JLABEL FOR ICON
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setBounds(693, 2, 72, 78);
 		panel.add(lblNewLabel_1);
 		lblNewLabel_1.setIcon(new ImageIcon(WelcomeScreen.class.getResource("/clock1.png")));
 		
+		//JLABEL FOR PRICE
 		JLabel lblPrice = new JLabel("PRICE");
 		lblPrice.setForeground(Color.WHITE);
 		lblPrice.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 15));
@@ -117,6 +124,7 @@ public class TrainDeparture extends JFrame implements ActionListener  {
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
+		//JBUTTON TO BUY TICKET
 		JButton btnNewButton = new JButton("BUY TICKET");
 		btnNewButton.addActionListener(new ActionListener() {
 			@Override
@@ -145,6 +153,7 @@ public class TrainDeparture extends JFrame implements ActionListener  {
 		btnNewButton.setBounds(293, 0, 190, 51);
 		panel_1.add(btnNewButton);
 		
+		//JLABEL FOR TIME AND DESTINATIONS
 		JLabel lblDestination1 = new JLabel("6:30 AM             WILAYAH PERSEKUTUAN ");
 		lblDestination1.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
 		lblDestination1.setForeground(Color.WHITE);
@@ -217,6 +226,7 @@ public class TrainDeparture extends JFrame implements ActionListener  {
 		lblDestination12.setForeground(Color.WHITE);
 	 	lblDestination12.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
 	 	
+	 	//JLABEL FOR TIME
 	 	JLabel lblP1 = new JLabel("1                          ON TIME                 RM15.00");
 	 	lblP1.setForeground(Color.WHITE);
 	 	lblP1.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
