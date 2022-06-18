@@ -84,7 +84,6 @@ public class Order extends JFrame implements ActionListener {
         
         
         String[]places = {"WILAYAH PERSEKETUAN","JOHOR","PULAU PINANG","KELANTAN","MELAKA","PERAK","TERENGGANU","NEGERI SEMBILAN","KEDAH","PAHANG","SELANGOR","PERLIS"};
-        int[] prices = {1,2,3,4,5,6,7,7,8,9,10};
         comboBox = new JComboBox(places);
         comboBox.setBackground(Color.WHITE);
         comboBox.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 12));
@@ -97,7 +96,7 @@ public class Order extends JFrame implements ActionListener {
         lblCategory = new JLabel("Category.");
         lblCategory.setForeground(new Color(255, 255, 255));
         lblCategory.setFont(new Font("Century Gothic", Font.BOLD, 50));
-        lblCategory.setBounds(88, 193, 255, 62);
+        lblCategory.setBounds(78, 200, 255, 62);
         contentPane.add(lblCategory);
         
         SpinnerModel model = new SpinnerNumberModel(0, 0, 100, 1);
@@ -128,7 +127,7 @@ public class Order extends JFrame implements ActionListener {
         lblMembership = new JLabel("MEMBERSHIP.");
         lblMembership.setForeground(new Color(255, 255, 255));
         lblMembership.setFont(new Font("Century Gothic", Font.BOLD, 50));
-        lblMembership.setBounds(71, 384, 334, 62);
+        lblMembership.setBounds(78, 384, 334, 62);
         contentPane.add(lblMembership);
 
         Pricelabel = new JLabel("PRICE: ");

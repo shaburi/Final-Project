@@ -1,5 +1,4 @@
 import java.awt.EventQueue;
-
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -52,7 +51,7 @@ public class TrainDeparture extends JFrame implements ActionListener  {
 		setContentPane(contentPane);
 		setTitle("Departure");
 		contentPane.setLayout(null);
-		setBounds(100, 100, 780, 637);
+		setBounds(100, 100, 780, 630);
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setIconImage(new ImageIcon(this.getClass().getResource("/trainfront.png")).getImage());
@@ -74,13 +73,13 @@ public class TrainDeparture extends JFrame implements ActionListener  {
 		JLabel lblPlat = new JLabel("PLAT");
 		lblPlat.setForeground(Color.WHITE);
 		lblPlat.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 15));
-		lblPlat.setBounds(398, 61, 49, 19);
+		lblPlat.setBounds(358, 61, 49, 19);
 		panel.add(lblPlat);
 		
 		JLabel lblExpetation = new JLabel("EXPECTED");
 		lblExpetation.setForeground(Color.WHITE);
 		lblExpetation.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 15));
-		lblExpetation.setBounds(588, 61, 95, 19);
+		lblExpetation.setBounds(475, 61, 95, 19);
 		panel.add(lblExpetation);
 		
 		JLabel lblDeparture = new JLabel("DEPARTURE");
@@ -105,6 +104,12 @@ public class TrainDeparture extends JFrame implements ActionListener  {
 		lblNewLabel_1.setBounds(693, 2, 72, 78);
 		panel.add(lblNewLabel_1);
 		lblNewLabel_1.setIcon(new ImageIcon(WelcomeScreen.class.getResource("/clock1.png")));
+		
+		JLabel lblPrice = new JLabel("PRICE");
+		lblPrice.setForeground(Color.WHITE);
+		lblPrice.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 15));
+		lblPrice.setBounds(625, 61, 58, 19);
+		panel.add(lblPrice);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(0, 0, 205));
@@ -212,76 +217,76 @@ public class TrainDeparture extends JFrame implements ActionListener  {
 		lblDestination12.setForeground(Color.WHITE);
 	 	lblDestination12.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
 	 	
-	 	JLabel lblP1 = new JLabel("1                                           ON TIME");
+	 	JLabel lblP1 = new JLabel("1                          ON TIME                 RM15.00");
 	 	lblP1.setForeground(Color.WHITE);
 	 	lblP1.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
-	 	lblP1.setBounds(413, 100, 307, 27);
+	 	lblP1.setBounds(372, 99, 384, 27);
 	 	contentPane.add(lblP1);
 	 	
-	 	JLabel lblP1_1 = new JLabel("1                                           ON TIME");
+	 	JLabel lblP1_1 = new JLabel("1                          ON TIME                 RM50.00");
 	 	lblP1_1.setForeground(Color.WHITE);
 	 	lblP1_1.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
-	 	lblP1_1.setBounds(413, 136, 307, 27);
+	 	lblP1_1.setBounds(372, 136, 384, 27);
 	 	contentPane.add(lblP1_1);
 	 	
-	 	JLabel lblP1_2 = new JLabel("6                                           ON TIME");
+	 	JLabel lblP1_2 = new JLabel("6                          ON TIME                 RM25.00");
 	 	lblP1_2.setForeground(Color.WHITE);
 	 	lblP1_2.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
-	 	lblP1_2.setBounds(413, 173, 307, 27);
+	 	lblP1_2.setBounds(372, 173, 384, 27);
 	 	contentPane.add(lblP1_2);
 	 	
-	 	JLabel lblP1_3 = new JLabel("1                                           ON TIME");
+	 	JLabel lblP1_3 = new JLabel("1                          ON TIME                 RM60.00");
 	 	lblP1_3.setForeground(Color.WHITE);
 	 	lblP1_3.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
-	 	lblP1_3.setBounds(413, 210, 307, 27);
+	 	lblP1_3.setBounds(372, 210, 384, 27);
 	 	contentPane.add(lblP1_3);
 	 	
-	 	JLabel lblP1_4 = new JLabel("3                                           ON TIME");
+	 	JLabel lblP1_4 = new JLabel("3                          ON TIME                 RM40.00");
 	 	lblP1_4.setForeground(Color.WHITE);
 	 	lblP1_4.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
-	 	lblP1_4.setBounds(413, 247, 307, 27);
+	 	lblP1_4.setBounds(372, 247, 384, 27);
 	 	contentPane.add(lblP1_4);
 	 	
-	 	JLabel lblP1_5 = new JLabel("1                                           ON TIME");
+	 	JLabel lblP1_5 = new JLabel("1                          ON TIME                 RM40.00");
 	 	lblP1_5.setForeground(Color.WHITE);
 	 	lblP1_5.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
-	 	lblP1_5.setBounds(413, 284, 307, 27);
+	 	lblP1_5.setBounds(372, 284, 384, 27);
 	 	contentPane.add(lblP1_5);
 	 	
-	 	JLabel lblP1_6 = new JLabel("6                                           ON TIME");
+	 	JLabel lblP1_6 = new JLabel("6                          ON TIME                 RM65.00");
 	 	lblP1_6.setForeground(Color.WHITE);
 	 	lblP1_6.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
-	 	lblP1_6.setBounds(413, 321, 307, 27);
+	 	lblP1_6.setBounds(372, 321, 384, 27);
 	 	contentPane.add(lblP1_6);
 	 	
-	 	JLabel lblP1_7 = new JLabel("2                                           ON TIME");
+	 	JLabel lblP1_7 = new JLabel("2                          ON TIME                 RM30.00");
 	 	lblP1_7.setForeground(Color.WHITE);
 	 	lblP1_7.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
-	 	lblP1_7.setBounds(413, 358, 307, 27);
+	 	lblP1_7.setBounds(372, 358, 384, 27);
 	 	contentPane.add(lblP1_7);
 	 	
-	 	JLabel lblP1_8 = new JLabel("1                                           ON TIME");
+	 	JLabel lblP1_8 = new JLabel("1                          ON TIME                 RM70.00");
 	 	lblP1_8.setForeground(Color.WHITE);
 	 	lblP1_8.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
-	 	lblP1_8.setBounds(413, 395, 307, 27);
+	 	lblP1_8.setBounds(372, 395, 384, 27);
 	 	contentPane.add(lblP1_8);
 	 	
-	 	JLabel lblP1_9 = new JLabel("8                                           ON TIME");
+	 	JLabel lblP1_9 = new JLabel("8                          ON TIME                 RM35.00");
 	 	lblP1_9.setForeground(Color.WHITE);
 	 	lblP1_9.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
-	 	lblP1_9.setBounds(413, 432, 307, 27);
+	 	lblP1_9.setBounds(372, 432, 393, 27);
 	 	contentPane.add(lblP1_9);
 	 	
-	 	JLabel lblP1_10 = new JLabel("9                                           ON TIME");
+	 	JLabel lblP1_10 = new JLabel("9                          ON TIME                 RM20.00");
 	 	lblP1_10.setForeground(Color.WHITE);
 	 	lblP1_10.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
-	 	lblP1_10.setBounds(413, 469, 307, 27);
+	 	lblP1_10.setBounds(372, 469, 384, 27);
 	 	contentPane.add(lblP1_10);
 	 	
-	 	JLabel lblP1_11 = new JLabel("1                                           ON TIME");
+	 	JLabel lblP1_11 = new JLabel("1                          ON TIME                 RM90.00");
 	 	lblP1_11.setForeground(Color.WHITE);
 	 	lblP1_11.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
-	 	lblP1_11.setBounds(413, 506, 307, 27);
+	 	lblP1_11.setBounds(372, 506, 384, 27);
 	 	contentPane.add(lblP1_11);
 	  }
 	 public void actionPerformed(ActionEvent event) {
