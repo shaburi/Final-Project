@@ -112,16 +112,16 @@ public class Order extends JFrame implements ActionListener {
         kidspinner.setBounds(241, 309, 84, 32);
         contentPane.add(kidspinner);
       
-        adultLabel = new JLabel("ADULT");
+        adultLabel = new JLabel("ADULT (RM15)");
         adultLabel.setForeground(new Color(255, 255, 255));
         adultLabel.setFont(new Font("Century Gothic", Font.PLAIN, 26));
-        adultLabel.setBounds(127, 266, 90, 32);
+        adultLabel.setBounds(58, 266, 186, 32);
         contentPane.add(adultLabel);
 
-        childLabel = new JLabel("CHILDREN");
+        childLabel = new JLabel("CHILDREN (RM5)");
         childLabel.setForeground(new Color(255, 255, 255));
         childLabel.setFont(new Font("Century Gothic", Font.PLAIN, 26));
-        childLabel.setBounds(108, 309, 125, 32);
+        childLabel.setBounds(24, 302, 207, 32);
         contentPane.add(childLabel);
 
 
