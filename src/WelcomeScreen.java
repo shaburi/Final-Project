@@ -69,14 +69,10 @@ public class WelcomeScreen extends JFrame {
 		panel_1.setBackground(new Color(0, 0, 0));
 		getContentPane().add(panel_1);
 
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setBounds(326, 268, 128, 110);
-		lblNewLabel_1.setIcon(new ImageIcon(WelcomeScreen.class.getResource("/trainfront.png")));
-
-		JLabel lblNewLabel_2 = new JLabel("TICKET                 SYSTEM");
-		lblNewLabel_2.setBounds(206, 289, 383, 89);
+		JLabel lblNewLabel_2 = new JLabel("TICKET                                              SYSTEM");
+		lblNewLabel_2.setBounds(100, 269, 625, 89);
 		lblNewLabel_2.setForeground(Color.WHITE);
-		lblNewLabel_2.setFont(new Font("Arial", Font.BOLD, 30));
+		lblNewLabel_2.setFont(new Font("Arial", Font.BOLD, 28));
 
 		JLabel lblNewLabel = new JLabel("Created By : Shaiful Zharfan, Nur Nadrah Hayati ,Nur Ain Izzaty, Wan Haidhir Syaqimi");
 		lblNewLabel.setBounds(50, 511, 666, 27);
@@ -115,7 +111,6 @@ public class WelcomeScreen extends JFrame {
 		lblNewLabel_3.setForeground(new Color(255, 255, 255));
 		panel_1.setLayout(null);
 		panel_1.add(panel);
-		panel_1.add(lblNewLabel_1);
 		panel_1.add(lblNewLabel);
 		panel_1.add(lblNewLabel_3);
 		panel_1.add(lblNewLabel_2);
@@ -148,13 +143,14 @@ public class WelcomeScreen extends JFrame {
 		JLabel lblNewLabel_5 = new JLabel("BOOK YOUR TRAIN TICKET TODAY!");
 		lblNewLabel_5.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
 		lblNewLabel_5.setForeground(new Color(255, 255, 255));
-		lblNewLabel_5.setBounds(111, 86, 566, 66);
+		lblNewLabel_5.setBounds(108, 56, 566, 66);
 		panel_1.add(lblNewLabel_5);
 		
-		JLabel lblNewLabel_5_1 = new JLabel("Swchaeyo.0");
+		JLabel lblNewLabel_5_1 = new JLabel("");
 		lblNewLabel_5_1.setForeground(Color.WHITE);
 		lblNewLabel_5_1.setFont(new Font("Arial", Font.BOLD, 30));
-		lblNewLabel_5_1.setBounds(294, 192, 181, 66);
+		lblNewLabel_5_1.setBounds(134, 110, 489, 378);
+		lblNewLabel_5_1.setIcon(new ImageIcon(WelcomeScreen.class.getResource("/logonew.png")));
 		panel_1.add(lblNewLabel_5_1);
 	}
 }

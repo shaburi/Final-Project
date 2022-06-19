@@ -60,14 +60,15 @@ public class Receipt extends JFrame  {
 		TrainReceiptLabel = new JLabel("Train Receipt");
 		TrainReceiptLabel.setEnabled(false);
 		TrainReceiptLabel.setFont(new Font("Papyrus", Font.BOLD | Font.ITALIC, 45));
-		TrainReceiptLabel.setBounds(213, 0, 391, 54);
+		TrainReceiptLabel.setBounds(291, 24, 391, 54);
 		contentPane.add(TrainReceiptLabel);
 		
 		//JLABEL FOR GROUPNAME
-		groupNameLabel = new JLabel("swchaeyo.0l");
+		groupNameLabel = new JLabel("");
 		groupNameLabel.setForeground(Color.LIGHT_GRAY);
 		groupNameLabel.setFont(new Font("Ravie", Font.PLAIN, 10));
-		groupNameLabel.setBounds(470, 40, 89, 26);
+		groupNameLabel.setBounds(585, 313, 300, 254);
+		groupNameLabel.setIcon(new ImageIcon(WelcomeScreen.class.getResource("/nobackgroundlogo.png")));
 		contentPane.add(groupNameLabel);
 		
 		//GET TIME DAY OF THE ORDER
@@ -295,4 +296,3 @@ public class Receipt extends JFrame  {
 		
 	}
 }
-
