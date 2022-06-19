@@ -67,6 +67,9 @@ public class Order extends JFrame implements ActionListener {
         contentPane = new JPanel();
         contentPane.setBackground(new Color(0, 0, 128));
         contentPane.setBorder(null);
+        setTitle("ORDER");
+        setLocationRelativeTo(null);
+		setIconImage(new ImageIcon(this.getClass().getResource("/trainfront.png")).getImage());
         setContentPane(contentPane);
         contentPane.setLayout(null);
         Image payment = new ImageIcon(this.getClass().getResource("/pay.png")).getImage();

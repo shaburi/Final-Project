@@ -43,7 +43,10 @@ public class Receipt extends JFrame  {
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 0, 102));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setTitle("RECEIPT");
 		setContentPane(contentPane);
+		setLocationRelativeTo(null);
+		setIconImage(new ImageIcon(this.getClass().getResource("/trainfront.png")).getImage());
 		contentPane.setLayout(null);
 		
 		dim = Toolkit.getDefaultToolkit().getScreenSize();

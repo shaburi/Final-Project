@@ -64,7 +64,10 @@ public class Pay extends JFrame implements ActionListener{
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 0, 102));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setTitle("PAY");
 		setContentPane(contentPane);
+		setLocationRelativeTo(null);
+		setIconImage(new ImageIcon(this.getClass().getResource("/trainfront.png")).getImage());
 		contentPane.setLayout(null);
 		
 		 dim = Toolkit.getDefaultToolkit().getScreenSize();
