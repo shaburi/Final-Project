@@ -134,10 +134,10 @@ public class Order extends JFrame implements ActionListener {
         contentPane.add(childLabel);
 
         //JLABEL FOR MEMBERSHIP
-        lblMembership = new JLabel("MEMBERSHIP.");
+        lblMembership = new JLabel("MEMBERSHIP (10%).");
         lblMembership.setForeground(new Color(255, 255, 255));
         lblMembership.setFont(new Font("Century Gothic", Font.BOLD, 50));
-        lblMembership.setBounds(71, 384, 334, 62);
+        lblMembership.setBounds(71, 384, 476, 62);
         contentPane.add(lblMembership);
 
         //JLABEL FOR PRICE

@@ -171,8 +171,6 @@ public class Pay extends JFrame implements ActionListener{
 		PayButton = new JButton("PAY");
 		PayButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	// hiii
-            	// hello
             	double newww;
             	String data = textField.getText();
             	double amount = Double.parseDouble(textField.getText());
